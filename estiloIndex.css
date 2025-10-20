@@ -1,0 +1,320 @@
+/* ==== RESET ==== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+/* ==== NAVBAR ==== */
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+}
+
+.navbar li {
+  margin-left: 25px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: #ccc;
+}
+
+/* ==== HERO SECTION ==== */
+.hero {
+  height: 100vh;
+  background: url('Imagenes/Background.png') center/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+}
+
+/* Contenedor principal de la sección */
+.hero-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* ==== LADO IZQUIERDO ==== */
+.hero-left {
+  color: white;
+  max-width: 450px;
+}
+
+.hero-left h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+.hero-left p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 25px;
+  background: #738540;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #647536;
+}
+
+.btn-1 {
+  display: inline-block;
+  padding: 10px 25px;
+  background: white;
+  color: #738540;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-1:hover {
+  background: #ddd;
+}
+
+/* ==== LADO DERECHO (IMÁGENES) ==== */
+.hero-right {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  position: relative;
+  width: 250px;
+  height: 400px;
+  overflow: hidden;
+  border: 3px solid white;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card span {
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-shadow: 1px 1px 5px black;
+}
+
+/* ==== STATS SECTION ==== */
+/* --- Sección general --- */
+.stats {
+  position: relative;
+  background-color: #738540; /* color base */
+  padding: 70px 0;
+  overflow: hidden;
+}
+
+/* Imagen semitransparente debajo del contenido */
+.stats::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('Imagenes/avionesPatron.png') center/cover no-repeat;
+  opacity: 0.3; /* 👈 transparencia de la imagen */
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* El contenido debe estar por encima */
+.stats > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Contenedor general: texto a la izquierda, imagen a la derecha --- */
+.stats-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+/* --- Texto a la izquierda --- */
+.stats-text {
+  flex: 1;
+  color: white;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.stats-text h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/* --- Contenedor de estadísticas --- */
+.stats-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+/* --- Cada bloque de estadísticas --- */
+.stat {
+  text-align: center;
+  flex: 1;
+  position: relative;
+}
+
+.stat h3 {
+  font-size: 2rem;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* --- Líneas divisoras --- */
+.stat:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -20px;
+  top: 10%;
+  height: 80%;
+  width: 2px;
+  background-color: white;
+  opacity: 0.7;
+}
+
+/* --- Imagen a la derecha --- */
+.stats-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.stats-right img {
+  width: 100%;
+  max-width: 600px;
+  display: block;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 5px solid white;
+
+}
+
+.footer {
+  background-color: #fff; /* mismo tono verde que tu sección */
+  color: #738540;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.9rem;
+  position: relative;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.footer-links {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: #738540;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.footer-links a:hover {
+  opacity: 0.7; /* efecto suave al pasar el cursor */
+}
+
+
+
+/* ==== RESPONSIVE ==== */
+@media (max-width: 900px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-right {
+    flex-direction: column;
+  }
+
+  .stats-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .stats-icons {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .stats-right img {
+    width: 100%;
+  }
+}

@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: url('/Imagenes/Fondo.png') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ==== NAVBAR ==== */
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+}
+
+.navbar li {
+  margin-left: 25px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: #ccc;
+}
+
+.contenedor {
+    display: flex;
+    width: 85%;
+    max-width: 1200px;
+    height: 75vh;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 50px;
+    overflow: hidden;
+    color: white;
+}
+
+.info {
+    flex: 1;
+    padding: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(6px); 
+    -webkit-backdrop-filter: blur(6px); 
+
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+}
+
+.info h1 {
+    font-size: 2.3em;
+    margin-bottom: 20px;
+}
+
+.info p {
+    line-height: 1.6;
+    font-size: 0.95em;
+}
+
+.info .destino {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.formulario {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.formulario h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.formulario form {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding: 10px 5px;
+    color: white;
+    font-size: 1em;
+}
+
+.formulario input::placeholder {
+    color: #ccc;
+}
+
+.formulario button {
+    background-color: #778f4e;
+    border: none;
+    color: white;
+    padding: 12px 0;
+    border-radius: 3px;
+    font-size: 1em;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.formulario button:hover {
+    background-color: #6a7d46;
+}
+
+.login {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.login a {
+    color: #b3c98b;
+    text-decoration: none;
+    font-style: italic;
+}
+
+.login a:hover {
+    text-decoration: underline;
+}
