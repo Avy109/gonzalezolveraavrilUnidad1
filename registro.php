@@ -37,22 +37,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                   </div>";
 
     } else {
-        // 3️⃣ Evitar SQL Injection
+        
         $nombre = mysqli_real_escape_string($conn, $nombre);
         $correo = mysqli_real_escape_string($conn, $correo);
 
-        // 4️⃣ Cifrar la contraseña con bcrypt
-        $contrasena_hash = password_hash($contrasena, PASSWORD_DEFAULT);
+        $contrasena_hash = password_hash($contrasena, PASSWORD_DEFAULT, ["cost" => 10]);
 
-        // 5️⃣ Preparar consulta SQL para insertar datos
         $sql = "INSERT INTO usuarios (nombre, correo, contrasena) 
                 VALUES ('$nombre', '$correo', '$contrasena_hash')";
 
-        // 6️⃣ Ejecutar la consulta y verificar errores
         if (mysqli_query($conn, $sql)) {
             $error = "<div style='color:green; margin-top:5px;'>¡Registro exitoso!<br><br></div>";
         } else {
-            // Si el correo ya está registrado (error 1062)
+           
             if (mysqli_errno($conn) == 1062) {
                 $error = "<div style='color:red; margin-top:5px;'>El correo '$correo' ya ha sido registrado.<br><br></div>";
             } else {
@@ -106,8 +103,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <input type="text" name="nombre" placeholder="Nombre" required>
             <input type="email" name="correo" placeholder="Correo Electrónico" required>
             <input type="password" name="contrasena" placeholder="Contraseña" required>
-
-            <!-- Mensaje de error o éxito justo debajo de la contraseña -->
+            
             <?php if(!empty($error)) echo $error; ?>
 
             <button type="submit">Registrarse</button>
